@@ -1,0 +1,108 @@
+{
+    "graph_name": "preproc",
+    "cpu": "CVU",
+    "next_cpu": "MLA",
+    "input_buffers": [
+        {
+            "memories": [
+                {
+                    "segment_name" : "parent",
+                    "graph_input_name" :"input_image"
+                }
+            ],
+            "name": "decoder4"
+        }
+    ],
+    "output_memory_order": [
+        "output_tessellated_image",
+        "output_rgb_image"
+    ],
+    "debug": "EVXX_DBG_DISABLED",
+    "input_width": 640,
+    "input_height": 480,
+    "input_offset": 0,    
+    "output_width": 640,
+    "output_height": 640,
+    "scaled_width": 640,
+    "scaled_height": 640,
+    "batch_size": 1,
+    "normalize": true,
+    "aspect_ratio": true,
+    "tile_width": 128,
+    "tile_height": 32,
+    "tile_depth": 3,
+    "tessellate": true,
+    "input_depth": 3,
+    "output_depth": 3,
+    "q_zp": -128,
+    "q_scale": 255.0,
+    "channel_mean": [
+        0.0,
+        0.0,
+        0.0
+    ],
+    "channel_stddev": [
+        1.0,
+        1.0,
+        1.0
+    ],
+    "input_img_type": "NV12",
+    "output_img_type": "RGB",
+    "scaling_type": "BILINEAR",
+    "padding_type": "CENTER",
+    "input_stride": 1,
+    "output_stride": 1,
+    "output_dtype": "EVXX_INT8",
+    "caps": {
+        "sink_pads": [
+            {
+                "media_type": "video/x-raw",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "values": "GRAY, RGB, BGR, I420, NV12",
+                        "json_field": "input_img_type"
+                    },
+                    {
+                        "name": "width",
+                        "type": "int",
+                        "values": "1 - 4096",
+                        "json_field": "input_width"
+                    },
+                    {
+                        "name": "height",
+                        "type": "int",
+                        "values": "1 - 4096",
+                        "json_field": "input_height"
+                    }
+                ]
+            }
+        ],
+        "src_pads": [
+            {
+                "media_type": "video/x-raw",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "values": "RGB, BGR",
+                        "json_field": "output_img_type"
+                    },
+                    {
+                        "name": "width",
+                        "type": "int",
+                        "values": "1 - 4096",
+                        "json_field": "output_width"
+                    },
+                    {
+                        "name": "height",
+                        "type": "int",
+                        "values": "1 - 4096",
+                        "json_field": "output_height"
+                    }
+                ]
+            }
+        ]
+    }
+}

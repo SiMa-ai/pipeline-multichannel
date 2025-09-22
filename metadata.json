@@ -1,0 +1,24 @@
+{
+  "name": "multi-channel-pipeline-src",
+  "version": "0.0.1",
+  "release": "stable",
+  "description": "Process 16 Channels of Video on Modalix Source Code",
+  "platforms": [
+    {
+      "type": "palette"
+    }
+  ],
+  "resources": [
+    "gh:sima-ai/pipeline-multichannel",
+    "https://docs.sima.ai/pkg_downloads/SDK1.7.0/samples/multichannel/davinci_elf.tar.gz",
+    "https://docs.sima.ai/pkg_downloads/SDK1.7.0/samples/multichannel/modalix_elf.tar.gz"
+  ],
+  "size": {
+    "download": "92MB",
+    "install": "180MB"
+  },
+  "installation": {
+    "script": "cd pipeline-multichannel && ./install.sh",
+    "post-message": "To run this package:\n\n1. Build the project:\n   mpk create -s . -d . --clean --board-type modalix\n\n2. Connect to your DevKit:\n   mpk device connect sima@<devkit-ip>\n\n3. Deploy the package:\n   mpk deploy -f pipeline-multichannel.mpk\n\n4. Launch OptiView on the DevKit:\n   optiview\n\n5. Open OptiView Web UI from your host browser, find the pipeline, modify the RTSP source as needed, and run it.\n   (On Windows use PowerShell)\n\n"
+  }
+}

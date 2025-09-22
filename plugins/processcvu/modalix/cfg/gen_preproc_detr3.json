@@ -1,0 +1,109 @@
+{
+  "graph_name": "preproc",
+  "aspect_ratio": false,
+  "batch_size": 1,
+  "channel_mean": [
+    0.40799999237060547,
+    0.44699999690055847,
+    0.4699999988079071
+  ],
+  "channel_stddev": [
+    0.289000004529953,
+    0.27399998903274536,
+    0.27799999713897705
+  ],
+  "cpu": "CVU",
+  "debug": "EVXX_DBG_DISABLED",
+  "input_depth": 3,
+  "input_height": 480,
+  "input_offset": 0,
+  "input_img_type": "NV12",
+  "input_stride": 1,
+  "input_width": 640,
+  "next_cpu": "MLA",
+  "normalize": true,
+  "output_depth": 3,
+  "output_dtype": "EVXX_INT8",
+  "output_height": 480,
+  "output_img_type": "RGB",
+  "output_stride": 1,
+  "output_width": 640,
+  "padding_type": "TOP_LEFT",
+  "q_scale": 53.598086218026346,
+  "q_zp": -14,
+  "scaled_height": 480,
+  "scaled_width": 640,
+  "scaling_type": "BILINEAR",
+  "tessellate": true,
+  "tile_depth": 3,
+  "tile_height": 48,
+  "tile_width": 64,
+  "input_buffers": [
+    {
+      "memories": [
+        {
+          "segment_name": "parent",
+          "graph_input_name": "input_image"
+        }
+      ],
+      "name": "decoder3"
+    }
+  ],
+  "output_memory_order": [
+    "output_tessellated_image",
+    "output_rgb_image"
+  ],
+  "caps": {
+    "sink_pads": [
+      {
+        "media_type": "video/x-raw",
+        "params": [
+          {
+            "name": "format",
+            "type": "string",
+            "values": "GRAY, RGB, BGR, I420, NV12",
+            "json_field": "input_img_type"
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": "input_width"
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": "input_height"
+          }
+        ]
+      }
+    ],
+    "src_pads": [
+      {
+        "media_type": "video/x-raw",
+        "params": [
+          {
+            "name": "format",
+            "type": "string",
+            "values": "RGB, BGR",
+            "json_field": "output_img_type"
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": "output_width"
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": "output_height"
+          }
+        ]
+      }
+    ]
+  }
+}
+

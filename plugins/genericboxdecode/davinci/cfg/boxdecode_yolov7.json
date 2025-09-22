@@ -1,0 +1,204 @@
+{
+    "version": 0.1,
+    "node_name": "simaai_boxdecode",
+    "memory": {
+        "cpu": 0,
+        "next_cpu": 1
+    },
+    "system": {
+        "out_buf_queue": 1,
+        "debug": 0,
+        "dump_data": 0
+    },
+    "buffers": {
+        "input": [
+            {
+                "name": "simaai_process_mla",
+                "size": 2419200
+            }
+        ],
+        "output": {
+            "size": 580
+        }
+    },
+    "batch_size": 1,
+    "decode_type" : "yolo",
+    "topk" : 24,
+    "original_width" : 640,
+    "original_height" : 480,
+    "model_width" : 640,
+    "model_height" : 640,
+    "num_classes" : 80,
+    "detection_threshold" : 0.3,
+    "nms_iou_threshold" : 0.1,
+    "num_in_tensor": 9,
+    "input_width": [
+        80,
+        80,
+        80,
+        40,
+        40,
+        40,
+        20,
+        20,
+        20
+    ],
+    "input_height": [
+        80,
+        80,
+        80,
+        40,
+        40,
+        40,
+        20,
+        20,
+        20
+    ],
+    "input_depth": [
+        6,
+        6,
+        243,
+        6,
+        6,
+        243,
+        6,
+        6,
+        243
+    ],
+    "slice_width": [
+        80,
+        80,
+        80,
+        40,
+        40,
+        20,
+        20,
+        20,
+        20
+    ],
+    "slice_height": [
+        80,
+        80,
+        1,
+        40,
+        40,
+        1,
+        20,
+        20,
+        1
+    ],
+    "slice_depth": [
+        6,
+        6,
+        243,
+        6,
+        6,
+        243,
+        6,
+        6,
+        243
+    ],
+    "dq_scale": [
+        0.3985348208101054,
+        1.8187226177474125,
+        261.3747281027927,
+        0.39812331778037563,
+        0.4891400470655299,
+        259.1820884804301,
+        0.3975131921407652,
+        0.39456547557733,
+        257.17931223081666
+    ],
+    "dq_zp": [
+        -128,
+        -128,
+        -128,
+        -128,
+        -128,
+        -128,
+        -128,
+        -128,
+        -128
+    ],
+    "data_type": [
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8",
+        "INT8"
+    ],
+    "caps": {
+        "sink_pads": [
+            {
+                "media_type": "application/vnd.simaai.tensor",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "values": "MLA",
+                        "json_field": null
+                    },
+                    {
+                        "name": "data_type",
+                        "type": "string",
+                        "values": "(INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32)",
+                        "json_field": "data_type"
+                    },
+                    {
+                        "name": "width",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "input_width"
+                    },
+                    {
+                        "name": "height",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "input_height"
+                    },
+                    {
+                        "name": "depth",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "input_depth"
+                    },
+                    {
+                        "name": "slice_width",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "slice_width"
+                    },
+                    {
+                        "name": "slice_height",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "slice_height"
+                    },
+                    {
+                        "name": "slice_depth",
+                        "type": "int",
+                        "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+                        "json_field": "slice_depth"
+                    }
+                ]
+            }
+        ],
+        "src_pads": [
+            {
+                "media_type": "application/vnd.simaai.tensor",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "string",
+                        "values": "BBOX",
+                        "json_field": null
+                    }
+                ]
+            }
+        ]
+    }
+}

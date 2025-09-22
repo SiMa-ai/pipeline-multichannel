@@ -1,0 +1,114 @@
+{
+    "version" : "0.1",
+    "node_name" : "simaai_render",
+    "memory" : {
+        "cpu" : 0,
+        "next_cpu" : 0
+    },
+    "system" : {
+        "out_buf_queue" : 1,
+        "debug" : 0,
+        "dump_data" : 0
+    },
+    "buffers" : {
+        "input" : [
+            {
+                "name" : "decoder1",
+                "size" : 1382400
+            },
+            {
+                "name" : "simaai_boxdecode",
+                "size" : 580
+            }
+        ],
+        "output" : {
+            "size" : 1382400
+        }
+    },
+    "render_type" : "bbox",
+    "image_format" : "NV12",
+    "label_file" : "labels.txt",
+    "original_width" : 640,
+    "original_height" : 480,
+    "threshold" : 0.5,
+    "color_box" : [
+        0,
+        255,
+        0
+    ],
+    "color_text" : [
+        30,
+        5,
+        100
+    ],
+    "class_special" : 0,
+    "color_box_special" : [
+        200,
+        0,
+        0
+    ],
+    "debug" : false,
+    "caps" : {
+        "sink_pads" : [
+            {
+                "media_type" : "application/vnd.simaai.tensor",
+                "params" : [
+                    {
+                        "name" : "format",
+                        "type" : "string",
+                        "values" : "bbox, bboxy, bboxt",
+                        "json_field" : "render_type"
+                    }
+                ]
+            },
+            {
+                "media_type" : "video/x-raw",
+                "params" : [
+                    {
+                        "name" : "format",
+                        "type" : "string",
+                        "values" : "GRAY, RGB, BGR, I420, NV12",
+                        "json_field" : "image_format"
+                    },
+                    {
+                        "name" : "width",
+                        "type" : "int",
+                        "values" : "1 - 4096",
+                        "json_field" : "original_width"
+                    },
+                    {
+                        "name" : "height",
+                        "type" : "int",
+                        "values" : "1 - 4096",
+                        "json_field" : "original_height"
+                    }
+                ]
+            }
+        ],
+        "src_pads" : [
+            {
+                "media_type" : "video/x-raw",
+                "params" : [
+                    {
+                        "name" : "format",
+                        "type" : "string",
+                        "values" : "GRAY, RGB, BGR, I420, NV12",
+                        "json_field" : "image_format"
+                    },
+                    {
+                        "name" : "width",
+                        "type" : "int",
+                        "values" : "1 - 4096",
+                        "json_field" : "original_width"
+                    },
+                    {
+                        "name" : "height",
+                        "type" : "int",
+                        "values" : "1 - 4096",
+                        "json_field" : "original_height"
+                    }
+                ]
+            }
+        ]
+    }
+}

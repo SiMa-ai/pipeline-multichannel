@@ -1,0 +1,146 @@
+{
+    "version": 0.1,
+    "node_name": "simaaiopenlabelconverter",
+    "memory": {
+        "cpu": 0,
+        "next_cpu": 1
+    },
+    "system": {
+        "out_buf_queue": 1,
+        "debug": 0,
+        "dump_data": 0
+    },
+    "buffers": {
+        "input": [
+            {
+                "name": "simaai_boxdecode",
+                "size": 580
+            }
+        ],
+        "output": {
+            "size": 3072
+        }
+    },
+    "labels": [
+        "person",
+        "bicycle",
+        "car",
+        "motorcycle",
+        "airplane",
+        "bus",
+        "train",
+        "truck",
+        "boat",
+        "traffic light",
+        "fire hydrant",
+        "stop sign",
+        "parking meter",
+        "bench",
+        "bird",
+        "cat",
+        "dog",
+        "horse",
+        "sheep",
+        "cow",
+        "elephant",
+        "bear",
+        "zebra",
+        "giraffe",
+        "backpack",
+        "umbrella",
+        "handbag",
+        "tie",
+        "suitcase",
+        "frisbee",
+        "skis",
+        "snowboard",
+        "sports ball",
+        "kite",
+        "baseball bat",
+        "baseball glove",
+        "skateboard",
+        "surfboard",
+        "tennis racket",
+        "bottle",
+        "wine glass",
+        "cup",
+        "fork",
+        "knife",
+        "spoon",
+        "bowl",
+        "banana",
+        "apple",
+        "sandwich",
+        "orange",
+        "brocolli",
+        "carrot",
+        "hot dog",
+        "pizza",
+        "donut",
+        "cake",
+        "chair",
+        "couch",
+        "potted plant",
+        "bed",
+        "dining table",
+        "toilet",
+        "tv",
+        "laptop",
+        "mouse",
+        "remote",
+        "keyboard",
+        "cell phone",
+        "microwave",
+        "oven",
+        "toaster",
+        "sink",
+        "refrigerator",
+        "book",
+        "clock",
+        "vase",
+        "scissors",
+        "teddy bear",
+        "hair drier",
+        "toothbrush"
+    ],
+    "caps": {
+        "sink_pads": [
+            {
+                "media_type": "application/vnd.simaai.tensor",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "int",
+                        "values": "BBOX",
+                        "json_field": null
+                    }
+                ]
+            }
+        ],
+        "src_pads": [
+            {
+                "media_type": "application/vnd.simaai.tensor",
+                "params": [
+                    {
+                        "name": "format",
+                        "type": "int",
+                        "values": "BBOX",
+                        "json_field": null
+                    },
+                    {
+                        "name": "width",
+                        "type": "int",
+                        "values": "[ 4, 2147483647 ]",
+                        "json_field": null
+                    },
+                    {
+                        "name": "height",
+                        "type": "int",
+                        "values": "[ 4, 2147483647 ]",
+                        "json_field": null
+                    }
+                ]
+            }
+        ]
+    }
+}

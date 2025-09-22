@@ -1,0 +1,175 @@
+{
+  "version" : 0.1,
+  "simaai__params" : {
+    "outputs" : [
+      {
+        "name" : "mla_out",
+        "size" : 2419200
+      }
+    ],
+    "batch_size" : 1,
+    "batch_sz_model" : 1,
+    "in_tensor_sz": 0,
+    "out_tensor_sz": 0,
+    "model_path" : "/data/simaai/applications/pipeline-multichannel/share/processmla/yolov7.elf"
+  },
+  "output_width": [
+    80,
+    80,
+    80,
+    40,
+    40,
+    40,
+    20,
+    20,
+    20
+  ],
+  "output_height": [
+    80,
+    80,
+    80,
+    40,
+    40,
+    40,
+    20,
+    20,
+    20
+  ],
+  "output_depth": [
+    6,
+    6,
+    243,
+    6,
+    6,
+    243,
+    6,
+    6,
+    243
+  ],
+  "slice_width": [
+    80,
+    80,
+    80,
+    40,
+    40,
+    20,
+    20,
+    20,
+    20
+  ],
+  "slice_height": [
+    80,
+    80,
+    1,
+    40,
+    40,
+    1,
+    20,
+    20,
+    1
+  ],
+  "slice_depth": [
+    6,
+    6,
+    243,
+    6,
+    6,
+    243,
+    6,
+    6,
+    243
+  ],
+  "data_type": [
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8",
+    "INT8"
+  ],
+  "caps": {
+    "sink_pads": [
+      {
+        "media_type": "video/x-raw",
+        "params": [
+          {
+            "name": "format",
+            "type": "string",
+            "values": "RGB, BGR",
+            "json_field": null
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": null
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "values": "1 - 4096",
+            "json_field": null
+          }
+        ]
+      }
+    ],
+    "src_pads": [
+      {
+        "media_type": "application/vnd.simaai.tensor",
+        "params": [
+          {
+            "name": "format",
+            "type": "string",
+            "values": "MLA",
+            "json_field": null
+          },
+          {
+            "name": "data_type",
+            "type": "string",
+            "values": "(INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32)",
+            "json_field": "data_type"
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "output_width"
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "output_height"
+          },
+          {
+            "name": "depth",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "output_depth"
+          },
+          {
+            "name": "slice_width",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "slice_width"
+          },
+          {
+            "name": "slice_height",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "slice_height"
+          },
+          {
+            "name": "slice_depth",
+            "type": "int",
+            "values": "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)",
+            "json_field": "slice_depth"
+          }
+        ]
+      }
+    ]
+  }
+}
