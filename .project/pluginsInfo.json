@@ -1,0 +1,24 @@
+{
+    "pluginsInfo" : [
+        {
+            "gid" : "process_ev",
+            "path" : "plugins/processcvu"
+        },
+        {
+            "gid" : "process",
+            "path" : "plugins/processmla"
+        },
+        {
+            "gid" : "genericboxdecode",
+            "path" : "plugins/genericboxdecode"
+        },
+        {
+            "gid" : "simaaiopenlabelconverter",
+            "path" : "plugins/simaaiopenlabelconverter"
+        },
+        {
+            "gid" : "genericrender",
+            "path" : "plugins/genericrender"
+        }
+    ]
+}
