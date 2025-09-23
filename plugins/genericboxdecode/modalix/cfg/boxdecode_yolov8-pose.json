@@ -27,8 +27,8 @@
   "topk": 24,
   "num_classes": 1,
   "channel_of_interest": 0,
-  "original_width": 640,
-  "original_height": 480,
+  "original_width": 1280,
+  "original_height": 720,
   "num_in_tensor": 9,
   "data_type": [
     "INT8",

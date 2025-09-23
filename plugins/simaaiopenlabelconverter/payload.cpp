@@ -58,8 +58,8 @@ const char *UserContext::getSrcCaps() { return "ANY"; }
 bool UserContext::fixateSrcCaps(GstCaps **) { return true; }
 bool UserContext::parseSinkCaps(GstCaps *) { return true; }
 
-constexpr int width = 640;
-constexpr int height = 480;
+constexpr int width = 1280;
+constexpr int height = 720;
 constexpr size_t yuv_size = 1.5 * width * height; // 1382400
 constexpr size_t bbox_size = 580;
 constexpr size_t total_size = yuv_size + bbox_size;

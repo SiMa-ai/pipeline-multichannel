@@ -28,8 +28,8 @@
     "render_type" : "bbox",
     "image_format" : "NV12",
     "label_file" : "labels.txt",
-    "original_width" : 640,
-    "original_height" : 480,
+    "original_width" : 1280,
+    "original_height" : 720,
     "threshold" : 0.5,
     "color_box" : [
         0,

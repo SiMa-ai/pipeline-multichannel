@@ -18,8 +18,8 @@
         "output_rgb_image"
     ],
     "debug": "EVXX_DBG_DISABLED",
-    "input_width": 640,
-    "input_height": 480,
+    "input_width": 1280,
+    "input_height": 720,
     "input_offset": 0,
     "output_width": 640,
     "output_height": 640,

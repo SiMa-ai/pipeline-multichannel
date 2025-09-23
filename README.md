@@ -47,16 +47,16 @@ To test this sample, you will need to download mediasrc tool and video files to 
 mkdir multisrc && cd multisrc && sima-cli install assets/multi-video-sources
 cd multi-video-sources-scripts/
 open preview.html
-./mediasrc.sh ../videos-480p30
+./mediasrc.sh ../videos-720p16
 ```
 
-On Windows, use `mediasrc.bat` instead.
+On Windows, use `mediasrc.bat` instead in PowerShell.
 
 
 ## Setup Instructions
 
 > [!IMPORTANT]
-> CLI commands below are executed from from **within the Palette SDK**.
+> CLI commands below are executed from **within the Palette SDK**.
 > Make sure to update `sima-cli` first to the latest version.
 
 ```bash
