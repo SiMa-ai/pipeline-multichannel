@@ -19,6 +19,6 @@
   },
   "installation": {
     "script": "cd pipeline-multichannel && ./install.sh",
-    "post-message": "To run this package:\n\n1. Build the project:\n   mpk create -s . -d . --clean --board-type modalix\n\n2. Connect to your DevKit:\n   mpk device connect sima@<devkit-ip>\n\n3. Deploy the package:\n   mpk deploy -f pipeline-multichannel.mpk\n\n4. Launch OptiView on the DevKit:\n   optiview\n\n5. Open OptiView Web UI from your host browser, find the pipeline, modify the RTSP source as needed, and run it.\n   (On Windows use PowerShell)\n\n"
+    "post-message": "To run this package:\n\n1. Build the project:\n   mpk create -s . -d . --clean --board-type modalix\n\n2. Connect to your DevKit:\n   mpk device connect -t sima@<devkit-ip>\n\n3. Deploy the package:\n   mpk deploy -f pipeline-multichannel.mpk\n\n4. Launch OptiView on the DevKit:\n   optiview\n\n5. Open OptiView Web UI from your host browser, find the pipeline, modify the RTSP source as needed, and run it.\n   (On Windows use PowerShell)\n\n"
   }
 }
