@@ -1,7 +1,7 @@
 # Multi-Channel Video Inference Pipeline
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![SDK](https://img.shields.io/badge/SDK-1.7.0-green.svg)
+![SDK](https://img.shields.io/badge/SDK-2.0.0-green.svg)
 ![YOLOv7](https://img.shields.io/badge/model-YOLOv7-purple)
 ![YOLOv8](https://img.shields.io/badge/model-YOLOv8-teal)
 ![YOLOv9](https://img.shields.io/badge/model-YOLOv9-orange)
