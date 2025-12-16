@@ -45,7 +45,7 @@ To test this sample, you will need to download mediasrc tool and video files to 
 
 ```bash
 mkdir multisrc && cd multisrc && sima-cli install assets/multi-video-sources
-cd multi-video-sources-scripts/
+cd multivideo-sources-scripts/
 open preview.html
 ./mediasrc.sh ../videos-720p16
 ```
@@ -76,6 +76,7 @@ During installation, the process will update `application.json` to configure the
 > Use `--board-type` according to your DevKit type.
 
 ```bash
+cd pipeline-multichannel
 mpk create -s . -d . --clean --board-type modalix
 ```
 
@@ -83,7 +84,7 @@ mpk create -s . -d . --clean --board-type modalix
 
 ```bash
 mpk device connect -t sima@devkit-ip
-mpk deploy -f pipeline-multichannel.mpk
+mpk deploy -f project.mpk
 ```
 
 ## Setup OptiView
