@@ -28,10 +28,9 @@ set -e
 
 # Step 1: Copy plugins from Modalix and Davinci ELF extractions
 cp -r ../modalix_elf/plugins/* plugins/
-cp -r ../davinci_elf/plugins/* plugins/
 
 # Step 2: Cleanup extracted directories and tarballs
-rm -rf ../modalix_elf ../davinci_elf ../*.tar.gz
+rm -rf ../modalix_elf ../*.tar.gz
 
 # Step 3: Ask for host IP interactively
 read -rp "Enter the host IP address for RTSP streaming: " HOST_IP

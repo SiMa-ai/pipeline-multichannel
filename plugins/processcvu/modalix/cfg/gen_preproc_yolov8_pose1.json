@@ -30,10 +30,10 @@
     "aspect_ratio": true,
     "tile_width": 128,
     "tile_height": 32,
-    "tile_depth": 3,
+    "tile_channels": 3,
     "tessellate": true,
-    "input_depth": 3,
-    "output_depth": 3,
+    "input_channels": 3,
+    "output_channels": 3,
     "q_zp": -128,
     "q_scale": 255.0,
     "channel_mean": [

@@ -1,6 +1,6 @@
 {
   "name": "multi-channel-pipeline-src",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "release": "stable",
   "description": "Process 16 Channels of Video on Modalix Source Code",
   "platforms": [
@@ -10,8 +10,7 @@
   ],
   "resources": [
     "gh:sima-ai/pipeline-multichannel",
-    "https://docs.sima.ai/pkg_downloads/SDK1.7.0/samples/multichannel/davinci_elf.tar.gz",
-    "https://docs.sima.ai/pkg_downloads/SDK1.7.0/samples/multichannel/modalix_elf.tar.gz"
+    "https://docs.sima.ai/pkg_downloads/SDK2.0.0/samples/multichannel/modalix_elf.tar.gz"
   ],
   "size": {
     "download": "92MB",

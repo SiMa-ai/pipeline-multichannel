@@ -3,7 +3,7 @@
     "node_name": "simaai_boxdecode",
     "memory": {
         "cpu": 0,
-        "next_cpu": 1
+        "next_cpu": 0
     },
     "system": {
         "out_buf_queue": 1,
@@ -18,13 +18,13 @@
             }
         ],
         "output": {
-            "size": 604
+            "size": 580
         }
     },
     "decode_type": "yolo",
-    "detection_threshold": 0.2,
-    "nms_iou_threshold": 0.4,
-    "topk": 25,
+    "detection_threshold": 0.5,
+    "nms_iou_threshold": 0.5,
+    "topk": 24,
     "num_classes": 80,
     "channel_of_interest": 0,
     "original_width": 1280,
@@ -41,12 +41,12 @@
     "model_width": 640,
     "model_height": 640,
     "dq_scale": [
-        0.19921961349256448,
-        0.1998505565439357,
-        0.19415161799804104,
-        132.83790744588276,
-        132.15681678051726,
-        130.76425227030697
+        0.1991715746824075,
+        0.19940070027644993,
+        0.19062044502875733,
+        133.1597983694172,
+        130.3207704367736,
+        130.17465771381495
     ],
     "dq_zp": [
         0,

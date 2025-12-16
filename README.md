@@ -1,13 +1,13 @@
 # Multi-Channel Video Inference Pipeline
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![SDK](https://img.shields.io/badge/SDK-1.7.0-green.svg)
+![SDK](https://img.shields.io/badge/SDK-2.0.0-green.svg)
 ![YOLOv7](https://img.shields.io/badge/model-YOLOv7-purple)
 ![YOLOv8](https://img.shields.io/badge/model-YOLOv8-teal)
 ![YOLOv9](https://img.shields.io/badge/model-YOLOv9-orange)
-![All](https://img.shields.io/badge/DevKit-All-green)
+![All](https://img.shields.io/badge/DevKit-Modalix-green)
 
-This project demonstrates **SiMa.ai’s edge inferencing capability** for multi-channel video processing. It contains a **Vision AI pipeline** for processing up to 16 video channels on SiMa.ai’s **Modalix** or **MLSoC** (code name **Davinci**) platforms, requiring **SDK 1.7.0**.
+This project demonstrates **SiMa.ai’s edge inferencing capability** for multi-channel video processing. It contains a **Vision AI pipeline** for processing up to 16 video channels on SiMa.ai’s **Modalix** platform, requiring **SDK 2.0.0**.
 
 ## Overview
 
@@ -32,9 +32,9 @@ For **pose detection**, the MLA directly creates the overlay video output withou
 
 
 ## Prerequisites
-- **SDK**: [Palette SDK 1.7.0](https://docs.sima.ai/pages/palette/installation.html) for building and deploying the Vision AI pipeline. 
+- **SDK**: [Palette SDK 2.0.0](https://docs.sima.ai/pages/palette/installation.html) for building and deploying the Vision AI pipeline. 
 - **sima-cli**: Required for downloading assets and managing SiMa.ai resources. See the [sima-cli documentation](https://docs.sima.ai/pages/sima_cli/main.html) for installation and login instructions.  
-- **Hardware**: SiMa.ai DevKit with Modalix or MLSoC (Davinci).  
+- **Hardware**: SiMa.ai DevKit with Modalix.  
 
 ## Setup RTSP Sources
 
@@ -45,7 +45,7 @@ To test this sample, you will need to download mediasrc tool and video files to 
 
 ```bash
 mkdir multisrc && cd multisrc && sima-cli install assets/multi-video-sources
-cd multi-video-sources-scripts/
+cd multivideo-sources-scripts/
 open preview.html
 ./mediasrc.sh ../videos-720p16
 ```
@@ -76,15 +76,15 @@ During installation, the process will update `application.json` to configure the
 > Use `--board-type` according to your DevKit type.
 
 ```bash
+cd pipeline-multichannel
 mpk create -s . -d . --clean --board-type modalix
-mpk create -s . -d . --clean --board-type davinci
 ```
 
 ## Deploy The Package
 
 ```bash
 mpk device connect -t sima@devkit-ip
-mpk deploy -f pipeline-multichannel.mpk
+mpk deploy -f project.mpk
 ```
 
 ## Setup OptiView

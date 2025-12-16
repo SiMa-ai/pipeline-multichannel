@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.22)
 
 set(plugin_version "1.7")
 set(plugin_name "simaaiopenlabelconverter")
@@ -30,9 +30,15 @@ project("${plugin_name}"
 )
 
 if (NOT "$ENV{DEPENDENCIES_DIR_1}" STREQUAL "")
-  set(DEPENDENCIES_DIR_1 $ENV{DEPENDENCIES_DIR_1})
+  set(TEMPLATES_DIR $ENV{DEPENDENCIES_DIR_1})
+  set(CORE_ALLOCATOR_DIR $ENV{DEPENDENCIES_DIR_1}/allocator)
+  set(CORE_BUFFER_POOL_DIR $ENV{DEPENDENCIES_DIR_1}/buffer-pool)
+  set(CORE_CAPS_DIR $ENV{DEPENDENCIES_DIR_1}/caps)
 else()
-  set(DEPENDENCIES_DIR_1 ${CMAKE_CURRENT_SOURCE_DIR}/../templates)
+  set(TEMPLATES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../templates)
+  set(CORE_ALLOCATOR_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../core/allocator)
+  set(CORE_BUFFER_POOL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../core/buffer-pool)
+  set(CORE_CAPS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../core/caps)
 endif()
 
 if(NOT CMAKE_BUILD_TYPE)
@@ -43,7 +49,7 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GSTREAMER REQUIRED IMPORTED_TARGET gstreamer-1.0)
@@ -53,13 +59,13 @@ pkg_check_modules(OPENCV REQUIRED IMPORTED_TARGET opencv4)
 pkg_check_modules(JSON_GLIB json-glib-1.0)
 
 add_definitions(
-    -DVERSION=\"1.20.7\"
+    -DVERSION=\"${plugin_version}\"
     -DGST_LICENSE=\"LGPL\"
     -DGST_PACKAGE_NAME=\"SiMa.ai\ ${plugin_name}\ plugin\"
     -DGST_PACKAGE_ORIGIN=\"https://bitbucket.org/sima-ai/gst-simaai-plugins-base/\"
     -DPACKAGE=\"gst-simaai-plugins-base\"
     -DPLUGIN_NAME_LOWER=${plugin_name}
-    -DPLUGIN_NAME_CAMEL=${plugin_name}
+    -DPLUGIN_NAME_CAMEL=${name_camel}
 )
 
 add_library(${PROJECT_NAME}
@@ -70,14 +76,13 @@ add_library(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME}
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${DEPENDENCIES_DIR_1}
+    ${TEMPLATES_DIR}
     PUBLIC
-    ../../core/allocator
-    ../../core/buffer-pool
-    ../../core/caps
-    ../../core/utils    
     ${JSON_GLIB_INCLUDE_DIRS}
     "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>"
+    ${CORE_ALLOCATOR_DIR}
+    ${CORE_BUFFER_POOL_DIR} 
+    ${CORE_CAPS_DIR} 
 )
 
 target_link_libraries(${PROJECT_NAME}
