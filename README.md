@@ -5,9 +5,9 @@
 ![YOLOv7](https://img.shields.io/badge/model-YOLOv7-purple)
 ![YOLOv8](https://img.shields.io/badge/model-YOLOv8-teal)
 ![YOLOv9](https://img.shields.io/badge/model-YOLOv9-orange)
-![All](https://img.shields.io/badge/DevKit-All-green)
+![All](https://img.shields.io/badge/DevKit-Modalix-green)
 
-This project demonstrates **SiMa.ai’s edge inferencing capability** for multi-channel video processing. It contains a **Vision AI pipeline** for processing up to 16 video channels on SiMa.ai’s **Modalix** or **MLSoC** (code name **Davinci**) platforms, requiring **SDK 2.0.0**.
+This project demonstrates **SiMa.ai’s edge inferencing capability** for multi-channel video processing. It contains a **Vision AI pipeline** for processing up to 16 video channels on SiMa.ai’s **Modalix** platform, requiring **SDK 2.0.0**.
 
 ## Overview
 
@@ -34,7 +34,7 @@ For **pose detection**, the MLA directly creates the overlay video output withou
 ## Prerequisites
 - **SDK**: [Palette SDK 2.0.0](https://docs.sima.ai/pages/palette/installation.html) for building and deploying the Vision AI pipeline. 
 - **sima-cli**: Required for downloading assets and managing SiMa.ai resources. See the [sima-cli documentation](https://docs.sima.ai/pages/sima_cli/main.html) for installation and login instructions.  
-- **Hardware**: SiMa.ai DevKit with Modalix or MLSoC (Davinci).  
+- **Hardware**: SiMa.ai DevKit with Modalix.  
 
 ## Setup RTSP Sources
 
